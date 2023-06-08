@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time goes on</title>
+    <link href = "../../styles/main.css" rel = "stylesheet">
+    <link href = "../../images/temp_icon.png" rel = "icon">
+</head>
+<body>
+    <header>
+        <p>
+            Staying Back
+        </p>
+    </header>
+    <div class = "storybox">
+        <div id = "storybox_content">
+            <div id = "route_encounter">
+                <div class = "narration">
+                    <p>
+                        I stayed back, it might be dangerous to attempt a chase
+                    </p>
+
+                    <p>
+                        Two cars came speeding out of the T-junction. Both of them are pink cars.
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Blue_Shock.jpg">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        Oh no.. please don't tell me-
+                    </p>
+                </div>
+
+                <div id = "voicemail_1"></div>
+
+                <div class = "narration">
+                    <p>One of them blocked my way forward, and the other went to go behind me</p>
+
+                    <p>I try to wriggle my way out</p>
+
+                    <p>
+                        But they not only managed to effectively stop my car,
+                        but they expertly managed to make it so I can't move anymore.
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/blue_neutral.png">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        These are probably more self-driving cars
+                    </p>
+                </div>
+                <div class = "speech">
+                    <img src = "../../images/Blue_Angry.jpg">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        Just how rich are you red?
+                    </p>
+                </div>
+
+                <div class = "narration">
+                    Actually, these were probably hijacked from our department
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Blue_Pain.jpg">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        If Ms. Edgeworth found out what you've been up to,
+                        I don't think saving you now would keep you alive
+                    </p>
+                </div>
+
+                <div class = "narration">
+                    <p>Regardless, I couldn't get away from these cars.</p>
+
+                    <p>
+                        I was trying out a way to shake them off 
+                        when I hear the distant sound of a car accelerating
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Blue_Sad.jpg">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        I think I'm too late now
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "choices">
+        <button onclick="window.location.href = 'car_route_late.html'; setTrue();">Continue</button>
+    </div>
+
+
+    <script>
+        var subsequent_loop = `
+                <div class = "narration">
+                    <p>
+                        I stayed back, knowing what comes next.
+                    </p>
+
+                    <p>
+                        Knowing that two cars would come out of the T-junction,
+                        I try to find a way to dodge them and head back to chasing the pink car
+                    </p>
+
+                    <p>
+                        It wasn't successful
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/blue_angry.jpg">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        Not again!
+                    </p>
+                </div>
+
+                <div id = "voicemail_1"></div>
+
+                <div class = "narration">
+                    <p>
+                        The cars managed to block me again
+                    </p>
+
+                    <p>
+                        I can tell there's no getting away from them at this point
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/blue_neutral.png">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        Maybe I need to try another way
+                    </p>
+                </div>`
+
+                var already_encountered = sessionStorage.getItem("encountered_cars");
+
+                if (already_encountered == undefined){
+                    sessionStorage.setItem("encountered_cars", "false");
+                }
+                else if (already_encountered == "true"){
+                    document.getElementById('storybox_content').innerHTML = subsequent_loop;
+                }
+
+                function setTrue(){
+                    sessionStorage.setItem("encountered_cars", "true");
+                }
+    </script>
+        <script src = "../../scripts/voicemails.js"></script>
+</body>
+</html>

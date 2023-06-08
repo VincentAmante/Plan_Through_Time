@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+body {
+    font-family: 'Jost', sans-serif;
+    background-color: #52164C;
+    overflow-x: hidden;
+    font-size: 105%;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    padding: 1px;
+    padding-left: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 125%;
+}
+
+/* 
+======  This contains the code for the storybox, where all narration will occur  =====
+*/
+.storybox {
+    margin-left: auto;
+    margin-right: auto;
+    padding:5px;
+    padding-top: 0;
+    border-radius: 20px;
+
+    overflow: hidden;
+    background: #14175a;
+    background: linear-gradient(0deg, #32114b 0%, #16185926 28%, #14175a00 100%);
+    width: 90%;
+
+    /* Internet Explorer Scrollbar */
+    scrollbar-face-color: #3900DB;
+    scrollbar-shadow-color: #52164C;
+    scrollbar-highlight-color:#52164C;
+    scrollbar-3dlight-color: #52164C;
+    scrollbar-darkshadow-color: #52164C;
+    scrollbar-track-color: #52164C;
+    scrollbar-arrow-color: #52164C;
+}
+
+/* This contains CSS for modifying the scrollbar on non-IE browsers*/
+#storybox_content::-webkit-scrollbar {
+    width: 5px;
+}
+
+#storybox_content::-webkit-scrollbar-track {
+    border-radius: 20px;
+}
+
+#storybox_content::-webkit-scrollbar-thumb {
+    background-color: #3900DB;
+    border-radius: 30px;
+}
+
+/* Style of the elements inside the storybox */
+#storybox_content{
+    overflow-y: auto;
+    text-align:justify;
+    height:65vh;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.storybox h1 {
+    border-bottom: 1px solid #d594b2;
+    text-align: left;
+    color: #d594b2;
+    font-size: 110%;
+}
+
+.storybox h2{
+    border-top: 1px solid #d594b2;
+    text-align: left;
+    color: #d594b2;
+    font-size: 110%;
+}
+
+/* Textbox containing the protagonist's narration */
+.narration {
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px 30px;
+    background-color: #1B0F35;
+    color: #D7D7D7;
+    border-radius: 10px;
+
+    text-align: justify;
+}
+
+/* Textbox when the character speaks*/
+.speech {
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    display: block;
+    overflow: auto;
+    width: auto;
+
+    background-color: #12062B;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.speech p {
+    margin-top: 2px;
+    float: left;
+    display: block;
+    width: auto;
+}
+
+.speech img {
+    width: 100px;
+    padding: 5px;
+    float: left;
+    vertical-align: top;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+/* Span style for each character's speech*/
+
+.blue{
+    color: #4b0bd6;
+    
+    display: block;
+    font-size: 125%;
+    width: auto;
+}
+
+.red{
+    color: #d60b37;
+
+    display: block;
+    font-size: 125%;
+    width: auto;
+}
+
+.bot {
+    color: #dda5c4;
+
+    display: block;
+    font-size: 125%;
+    width: auto;
+    
+}
+
+/* 
+======  Style for the button taking the user to different places in the story  =====
+*/
+#choices{
+    margin: auto;
+    margin-top: 20px;
+    width: 95%;
+    display: flex;
+}
+
+
+button {
+    font-family: 'Jost', sans-serif;
+    font-size: 105%;
+
+    padding: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
+
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    color: #d694bc;
+    border-radius: 10px;
+    background-color: #061029;
+    flex-grow: 100;
+
+    transition: background-color 0.75s ease;
+    transition: color 0.75s ease;
+}
+
+button:hover {
+    border: none;
+    transform: scale(1.05);
+}
+
+button:active, button:focus{
+    outline-style:none;
+}

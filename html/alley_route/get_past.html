@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time goes on</title>
+    <link href = "../../styles/main.css" rel = "stylesheet">
+    <link href = "../../images/temp_icon.png" rel = "icon">
+</head>
+<body>
+
+    <header>
+        <p>
+            Get through the Robot
+        </p>
+    </header>
+
+    <div class = "storybox">
+        <div id = "storybox_content">
+            <div id = "route_encounter">
+                
+                <div id = "voicemail_1"></div>
+                <div class = "narration">
+                    <p>
+                        I tried to find ways to get past this huge robot.
+                    </p>
+
+                    <p>
+                        Yet no matter what I did, this stupid Robot always manages to block me
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Big_bot.jpg">
+                    <span class = "bot">Big Bot</span>
+                    <p>
+                        NO PASSWORD! NO ENTRY!
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Blue_Angry.jpg">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        LET ME THROUGHH!!!
+                    </p>
+                </div>
+
+                
+                <div class = "narration">
+                    <p>
+                        It went on like that for a long time
+                    </p>
+                </div>
+
+                <div class = "narration">
+                    <p>
+                        Eventually, I heard the distant sound of a car accelerating,
+                        I can tell it's too late to find a way to Red at this point
+                    </p>
+                </div>
+            
+                <div class = "narration">
+                    <p>
+                        I let the rest of the voicemail play out
+                    </p>
+                </div>
+    
+                <div id = "voicemail_2"></div>
+    
+                <div class = "narration">
+                    <p>
+                        Finally, fearing that overstaying might ruin the loop,
+                        I let the golden pocketwatch activate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "choices">
+        <button onclick="window.location.href = '../true_start.html'; progress_voicemail();">Turn Back Time</button>
+    </div>
+
+    <script>
+        var voicemail_status = parseInt(sessionStorage.getItem("voicemail_progress"));
+
+        function progress_voicemail(){
+        if (voicemail_status < 6)
+        sessionStorage.setItem("voicemail_progress", voicemail_status + 1);
+        }
+    </script>
+    <script src = "../../scripts/voicemails.js"></script>
+</body>
+</html>

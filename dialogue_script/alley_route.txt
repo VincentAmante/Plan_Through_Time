@@ -1,0 +1,36 @@
+first time {
+    I got out of my car,
+    probably to the confusion and frustration of the drivers behind me.
+
+    The alley was blocked by a chain fence, but I quickly climbed over it.
+
+    I kept running.
+
+    I see in front of me, three separate paths: left, right and forward.
+
+    The left and right path lead to a dead end.
+}
+
+second time {
+    I once again exit my car to run through the alley.
+    Climbed over the fence again.
+
+    There's three paths: left, right, forward.
+}
+
+robot not met:
+{
+    The way forward should lead straight to Red,
+    
+    yet there's a large mechanical figure that seems to occupy the path
+
+    Blue: Right now, I still think we should go forward, but what do you think?
+}
+
+robot met {
+    There's a large robot forward, but it's the only way ahead.
+}
+
+First passcode encountered {
+    Maybe the other side will have the other half of the passcode?
+}

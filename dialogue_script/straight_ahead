@@ -1,0 +1,40 @@
+first time {
+    As I run towards the middle,
+    I get a closer look at the mechanical figure ahead of me..
+    
+    Blue: .. t-that's a huge robot!
+
+    Robot: HELLO BLUE! DO YOU HAVE THE PASSWORD?
+
+    Blue: Red.. you never fail to amaze me
+}
+
+second time {
+    I run towards the robot again.
+
+    Robot: HELLO BLUE! DO YOU HAVE THE PASSWORD?
+}
+
+no_password {
+    Blue: .. I don't have the password
+
+    Robot: NO PASS, NO ENTRY!
+
+    I needed to get past this robot, if I want to rush to Red
+
+    Blue: Do I head towards one of the other paths, or try to run past it?
+
+    Choice: alley_left | get_past_it | alley_right
+}
+
+password {
+    Blue: It's 15A-83LL4
+
+    Robot: YOU MAY PASS
+
+    Blue: Thanks
+
+    Having been given permission, I ran past the robot
+
+    Choice: Rush to Red
+}

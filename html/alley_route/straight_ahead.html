@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time goes on</title>
+    <link href = "../../styles/main.css" rel = "stylesheet">
+    <link href = "../../images/temp_icon.png" rel = "icon">
+</head>
+<body>
+
+    <header>
+        <p>
+            Straight Ahead
+        </p>
+    </header>
+
+    <div class = "storybox">
+        <div id = "storybox_content">
+            <div id = "route_encounter">
+                <div class = "narration">
+                    <p>
+                        As I run towards the middle,
+                        I get a closer look at the mechanical figure ahead of me..
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Blue_Pain.jpg">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        Why do we have huge robots now
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Big_bot.jpg">
+                    <span class = "bot">Big Bot</span>
+                    <p>
+                        HELLO BLUE! DO YOU HAVE THE PASSWORD?
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Blue_Pain.jpg">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        Red.. you never fail to amaze me
+                    </p>
+                </div>
+            </div>
+            
+
+            <div id = "password_status">
+                <div class = "speech">
+                    <img src = "../../images/Blue_Sad.jpg">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        I don't have the password..
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Big_bot.jpg">
+                    <span class = "bot">Big Bot</span>
+                    <p>
+                        NO PASSWORD! NO ENTRY!
+                    </p>
+                </div>
+
+                <div class = "narration">
+                    <p>
+                        I needed to get past this robot, if I want to rush to Red
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/blue_neutral.png">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        Do I head towards one of the other paths, or try to run past it?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id = "choices">
+            <button onclick="window.location.href = 'alley_left.html'; setTrue();">Left Alley</button>
+            <button onclick="window.location.href = 'get_past.html'; setTrue();">Get past it somehow</button>
+            <button onclick="window.location.href = 'alley_right.html'; setTrue();">Right Alley</button>
+    </div>
+
+    <script>
+        var subsequent_loop = `
+        <div class = "narration">
+                    <p>
+                        I run towards the robot again.
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/big_bot.jpg">
+                    <span class = "bot">Big Bot</span>
+                    <p>
+                        HELLO BLUE! DO YOU HAVE THE PASSWORD?
+                    </p>
+                </div>
+        `
+
+        var has_password = `
+        <div class = "speech">
+                    <img src = "../../images/blue_neutral.png">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        It's 15A-83LLA
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/big_bot.jpg">
+                    <span class = "bot">Big Bot</span>
+                    <p>
+                        YOU MAY ENTER
+                    </p>
+                </div>
+
+                <div class = "narration">
+                    <p>
+                        Having been given permission, I ran past the robot
+                    </p>
+                </div>
+            `
+
+            var has_password_choices = `
+            <button onclick="window.location.href = 'reached_red_p1.html'; setTrue();">Continue</button>
+            `
+
+            var already_encountered = sessionStorage.getItem("encountered_big_bot");
+
+            if (already_encountered == undefined){
+                sessionStorage.setItem("encountered_big_bot", "false");
+            }
+            else if (already_encountered == "true"){
+                document.getElementById('route_encounter').innerHTML = subsequent_loop;
+            }
+
+            var password_status = sessionStorage.getItem('password_status');
+
+            if (password_status == "has_both"){
+                document.getElementById('password_status').innerHTML = has_password;
+                document.getElementById('choices').innerHTML = has_password_choices;
+            }
+
+            function setTrue(){
+                    sessionStorage.setItem("encountered_big_bot", "true");
+                }
+    </script>
+    <script src = "../../scripts/voicemails.js"></script>
+</body>
+</html>

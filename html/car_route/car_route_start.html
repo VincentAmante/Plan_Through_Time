@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time goes on</title>
+    <link href = "../../styles/main.css" rel = "stylesheet">
+    <link href = "../../images/temp_icon.png" rel = "icon">
+</head>
+<body>
+
+    <header>
+        <p>
+            Chasing the Pink Car
+        </p>
+    </header>
+
+    <div class = "storybox">
+        <div id = "storybox_content">
+            <div class = "narration">
+                <p>
+                    On your suggestion, I decided to ignore the red light and head straight for the pink car.
+                </p>
+            </div>
+
+            <div class = "speech">
+                <img src = "../../images/blue_sly.jpg">
+                <span class = "blue">Blue</span>
+                <p>
+                    Vroom vroom baby
+                </p>
+            </div>
+
+            <div id = "voicemail_0"></div>
+
+            <div class = "narration">
+                <p>
+                    I try to catch up to the car but it's quickly speeding up.
+                </p>
+            </div>
+
+            <div id = "car_route">
+                <div class = "narration">
+                    <p>
+                        I see a T-junction up ahead,
+                        I could try to catch up to the car or hold back and see what happens
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "choices">
+        <button onclick="window.location.href = 'speed_up.html';">Catch Up</button>
+        <button onclick="window.location.href = 'stay_back.html';">Stay back</button>
+    </div>
+
+    <script>
+        var subsequent_loop = `
+        <div class = "narration">
+                    The T-junction is coming up <br>
+                    I know two cars will try and block me at this point <br>
+                    Do I speed up or stay back?
+                </div>
+                `
+
+                var already_encountered = sessionStorage.getItem("encountered_cars");
+
+                if (already_encountered == undefined){
+                    sessionStorage.setItem("encountered_cars", "false");
+                }
+                else if (already_encountered == "true"){
+                    document.getElementById('car_route').innerHTML = subsequent_loop;
+                }
+    </script>
+        <script src = "../../scripts/voicemails.js"></script>
+</body>
+</html>

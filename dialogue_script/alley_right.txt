@@ -1,0 +1,38 @@
+first time {
+    Entering the right alley, I stumble upon a dead end.
+
+    As I approach a pocket of space, I encounter a giant screen displaying a countdown.
+
+    As soon as I approach, it begins to speak
+
+    Screen: WELCOME BLUE! YOU'RE JUST IN TIIIIME FOR THE PASSWOORDDD!!
+
+    Screen: 5!
+    Screen: 4!
+    Screen: 3!
+    Screen: 2!
+    Screen: 1!
+
+    Screen: AND BEHOLD
+
+    And suddenly, the screen displays the words 'SECOND HALF: 1024'
+}
+
+second time {
+    Entering the right alley, nothing much changes.
+
+    The giant screen is still there,
+    displaying the same characters as it did before.
+
+    Nothing changed from last time.
+}
+
+continuation {
+    I heard the distant sound of a car accelerating,
+    I can tell it's too late to find a way to Red at this point
+
+    I let the rest of the voicemail play out
+
+    Finally, fearing that overstaying might ruin the loop,
+    I let the golden pocketwatch activate.
+}

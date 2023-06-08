@@ -1,0 +1,51 @@
+first encounter {
+    Narration: 
+    I went to speed up, almost tailgating the pink car.
+
+    However, two cars suddenly came speeding out of the T-junction.
+    Both of them are pink cars.
+
+    Blue: Wait.. but it's green light for u-
+
+    One of them ran into me, and rammed my car into the sidewalk
+
+    I try to push on anyways, and chase after the pink car again.
+
+    But they started blocking the path ahead of me.
+
+    Blue: Who the hell are these guys?
+
+    I couldn't look into the pink car, their windows are just as shaded as the one I'm after.
+    
+    I realised these might also be self-driving cars.
+
+    Blue: Red, just how rich are you?!
+
+    Actually, these were probably hijacked from our department
+
+    Blue: If Ms. Edgeworth found out what you've been up to,
+    I don't think saving you now would keep you alive
+
+    Regardless, I couldn't get away from these cars when I see the distant figures of people heading towards where Red was
+
+    Blue: .. Too late huh?
+}
+
+second encounter {
+    I went to speed up, trying to catch up to the car
+
+    Knowing that two cars would come out of the T-junction,
+    I try to find a way to dodge them while still being able to get to the main car
+
+    It wasn't successful
+
+    Blue (Angry): Not again!
+
+    The cars managed to crash into me again..
+
+    I can tell there's no getting away from them at this point
+
+    Blue (Disappointed): Maybe I need to try another way
+}
+
+Choice: Continue

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time goes on</title>
+    <link href = "../styles/main.css" rel = "stylesheet">
+    <link href = "../images/temp_icon.png" rel = "icon">
+</head>
+<body>
+
+    <!-- The loop always goes back here -->
+    <header>
+        <p>
+            Loop Start
+        </p>
+    </header>
+
+    <div class = "storybox">
+        <div id = "storybox_content">
+            <div class = "narration">
+                <p>I'm back in my car again, I have Red's voice mails. </p>
+                <p>I'm back at the intersection.
+                I see the bright pink car, just in front of me, crossing over to kill its owner.</p>
+                
+            </div>
+
+            <div class = "narration">
+                <p>I open my phone to look at the map, and figure out the fastest way to get to Red.</p>
+                <p>There's two routes I can take:</p>
+            </div>
+
+            <div class = "narration">
+                <p>
+                1) The Alley Route: If I leave the car now, I'll be able to run over to Red through the alleys.
+                Sure, I'll leave my car unattended, but it's not as important as the idiot genius.
+                </p>
+
+                <p>
+                    There's only one alley that takes me there, but it'll get me there faster than the road.
+                </p>
+            </div>
+
+            <div class = "narration">
+                <p>
+                    2) Chase the car now: I can go after the car, chase after it.
+                    Then I'll ram it to prevent it from hitting Red
+                </p>
+
+                <p>Sounds ideal</p>
+
+                <p>While I'm at it, I set one of the voicemails to play</p>
+            </div>
+
+        
+            <div class = "speech">
+                <img src = "../images/Blue_Sad.jpg">
+                <span class = "blue">Blue</span>
+                <p>
+                    This is where you came in, dear voice in my head.
+                    I need your guidance, what do I do?
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id = "choices">
+        <button onclick="window.location.href = 'alley_route/alley_route.html'; setTrue();">
+            Get out of the Car</button>
+        <button onclick="window.location.href = 'car_route/car_route_start.html'; setTrue();">
+            Chase after the vehicle</button>
+    </div>
+    
+    <script>
+        /* This contains code for when the player has visited this page before*/
+        var subsequent_loop = `
+        <div class = "narration">
+                <p>I'm back in my car again </p>
+                <p>Same Deal: pink car in front, got voicemails, got two routes</p>
+                <p>I set one of the voicemails to play</p>
+            </div>
+        <div class = "narration">
+                <p>
+                1) The Alley Route: If I leave the car now, I'll be able to run over to Red through the alleys.
+                Sure, I'll leave my car unattended, but it's not as important as the idiot genius.
+                </p>
+
+                <p>
+                    There's only one alley that takes me there, but it'll get me there faster than the road.
+                </p>
+            </div>
+
+            <div class = "narration">
+                <p>
+                    2) Chase the car now: I can go after the car, chase after it.
+                    Then I'll forcibly move it to prevent it from hitting Red
+                </p>
+
+                <p>Sounds cool, to be honest</p>
+            </div>
+
+            <div class = "speech">
+                <img src = "../images/blue_neutral.png">
+                <span class = "blue">Blue</span>
+                <p>
+                    What do I do?
+                </p>
+            </div>
+            `
+
+            var already_encountered = sessionStorage.getItem("already_travelled");
+
+            if (already_encountered == undefined){
+                sessionStorage.setItem("already_travelled", "false");
+                }
+            else if (already_encountered == "true"){
+                document.getElementById('storybox_content').innerHTML = subsequent_loop;
+                }
+
+            function setTrue(){
+                sessionStorage.setItem("already_travelled", "true");
+            }
+
+            var voicemail_status = sessionStorage.getItem("voicemail_progress");
+
+            // Begins the voicemails if it did not exist before
+            if (voicemail_status == undefined){
+                sessionStorage.setItem("voicemail_progress", 0)
+            }
+    </script>
+</body>
+</html>

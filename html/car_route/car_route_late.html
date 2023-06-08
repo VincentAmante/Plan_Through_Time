@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time goes on</title>
+    <link href = "../../styles/main.css" rel = "stylesheet">
+    <link href = "../../images/temp_icon.png" rel = "icon">
+</head>
+<body>
+
+    <header>
+        <p>
+            Car Route: Late
+        </p>
+    </header>
+
+    <div class = "storybox">
+        <div id = "storybox_content">
+            <div class = "narration">
+                I sat in my car, unable to move it as the two cars have come to block me
+            </div>
+
+            <div class = "speech">
+                <img src = "../../images/Blue_Sad.jpg">
+                <span class = "blue">Blue</span>
+                <p>
+                    Do I need to try another way? Maybe there's something I can do next time
+                </p>
+            </div>
+
+            <div class = "narration">
+                <p>
+                    Regardless, I heard the acceleration noises from a distance.
+                </p>
+            </div>
+
+            <div class = "speech">
+                <img src = "../../images/Blue_Disappointed.jpg">
+                <span class = "blue">Blue</span>
+                <p>
+                    I can't make it to Red from here
+                </p>
+            </div>
+        
+            <div class = "narration">
+                <p>
+                    I listen to the rest of the voice mail
+                </p>
+            </div>
+
+            <div id = "voicemail_2"></div>
+
+            <div class = "narration">
+                <p>
+                    Finally, I will for the time to go back to the beginning,
+                    the pocketwatch glows, and I wait as the flow of time streams upwards
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id = "choices">
+        <button onclick="window.location.href = '../true_start.html'; setTrue(); progress_voicemail();">Turn Back Time</button>
+    </div>
+
+    <script>
+        var subsequent_loop = `
+        <div class = "narration">
+            <p>
+                Accepting that I can't act in this situation,
+                I stayed motionless in my car.
+            </p>
+        </div>
+
+        <div class = "speech">
+            <img src = "../../images/blue_sad.jpg">
+            <span class = "blue">Blue</span>
+            <p>
+                Sorry Red, can't save you this time.
+            </p>
+        </div>
+
+        <div class = "narration">
+            <p>
+                I closed my eyes, and let the rest of the voicemail play out
+            </p>
+        </div>
+
+        <div id = "voicemail_2"></div>
+
+        <div class = "narration">
+            <p>
+                Finally, fearing that overstaying might ruin the loop,
+                I let the golden pocketwatch activate.
+            </p>
+        </div>
+                </div>
+                `
+                var already_encountered = sessionStorage.getItem("car_late_encountered");
+
+                if (already_encountered == undefined){
+                    sessionStorage.setItem("car_late_encountered", "false");
+                }
+                else if (already_encountered == "true"){
+                    document.getElementById('storybox_content').innerHTML = subsequent_loop;
+                }
+
+                function setTrue(){
+                    sessionStorage.setItem("car_late_encountered", "true");
+                }
+
+                var voicemail_status = parseInt(sessionStorage.getItem("voicemail_progress"));
+
+                function progress_voicemail(){
+                if (voicemail_status < 6)
+                sessionStorage.setItem("voicemail_progress", voicemail_status + 1);
+            }
+    </script>
+    <script src = "../../scripts/voicemails.js"></script>
+</body>
+</html>

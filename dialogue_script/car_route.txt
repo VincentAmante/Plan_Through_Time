@@ -1,0 +1,20 @@
+Narration: On your suggestion, I decided to ignore the red light and head straight for the pink car.
+
+Blue: Wonder if I can get Red to pay for it when this is done.
+
+Narration: 
+I try to catch up to the car but it suddenly sped up.
+
+first time {
+    I see a T-junction up ahead,
+    I could try to catch up to the car or hold back, see what happens
+    }
+
+subsequent {
+     The T-junction is coming up,
+     I know two cars will try and block me at this point
+     Do I speed up or stay back?
+}
+
+
+Choices: Speed Up | Stay Back

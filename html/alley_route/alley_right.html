@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time goes on</title>
+    <link href = "../../styles/main.css" rel = "stylesheet">
+    <link href = "../../images/temp_icon.png" rel = "icon">
+</head>
+<body>
+
+    <header>
+        <p>
+            Right Alley
+        </p>
+    </header>
+
+    <div class = "storybox">
+        <div id = "storybox_content">
+            <div id = "route_encounter">
+                
+                <div id = "voicemail_1"></div>
+
+                <div class = "narration">
+                    <p>
+                        Entering the right alley, I stumble upon a dead end. <br>
+                        As I approach a pocket of space, I encounter a giant screen displaying a countdown. <br>
+                        As soon as I approach, it begins to speak
+                    </p>
+                    </div>
+            
+                <div class = "speech">
+                    <img src = "../../images/Screen.jpg">
+                    <span class = "bot">Big Screen</span>
+                    <p>
+                        WELCOME BLUE! YOU'RE JUST IN TIIIIME FOR THE PASSWOORDDD!!
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Blue_Sad.jpg">
+                    <span class = "blue">Blue</span>
+                    <p id = "password_dialogue">
+                        Password..?
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Screen_Glad.jpg">
+                    <span class = "bot">Big Screen</span>
+                    <p>
+                        FIVE!
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Screen_Glad.jpg">
+                    <span class = "bot">Big Screen</span>
+                    <p>
+                        FOUR!!
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Screen_Glad.jpg">
+                    <span class = "bot">Big Screen</span>
+                    <p>
+                        THREE!!!
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Screen_Glad.jpg">
+                    <span class = "bot">Big Screen</span>
+                    <p>
+                        TWO!!!!
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Screen_Glad.jpg">
+                    <span class = "bot">Big Screen</span>
+                    <p>
+                        ONE!!!!!!
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Screen.jpg">
+                    <span class = "bot">Big Screen</span>
+                    <p>
+                        THE SECOND HALF OF THE PASSWORD IS!
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Screen_Password.jpg">
+                    <span class = "bot">Big Screen</span>
+                    <p>
+                        8! 3! L! L! A!
+                    </p>
+                </div>
+
+                <div class = "narration">
+                    <p>
+                        The passcode '83LLA' remained visible on the screen.
+                    </p>
+                </div>
+
+                <div class = "speech">
+                    <img src = "../../images/Blue_Sad.jpg">
+                    <span class = "blue">Blue</span>
+                    <p id = "password_dialogue">
+                        Thanks..
+                    </p>
+                </div>
+            </div>
+
+            <div class = "narration">
+                <p>
+                    I heard the distant sound of a car accelerating,
+                    I can tell it's too late to find a way to Red at this point
+                </p>
+            </div>
+        
+            <div class = "narration">
+                <p>
+                    I let the rest of the voicemail play out
+                </p>
+            </div>
+
+            <div id = "voicemail_2"></div>
+
+            <div class = "narration">
+                <p>
+                    Finally, fearing that overstaying might ruin the loop,
+                    I let the golden pocketwatch activate.
+                </p>
+            </div>
+
+        </div>
+    </div>
+    
+    <div id = "choices">
+        <button onclick="window.location.href = '../true_start.html'; setTrue(); progress_voicemail();">Turn back time</button>
+    </div>
+
+    <script>
+        var subsequent_loop = `
+        <div id = "voicemail_1"></div>
+
+        <div class = "narration">
+            <p>Entering the right alley, nothing much changes.</p>
+        </div>
+
+        <div class = "narration">
+            <p>
+                The giant screen is still there,
+                displaying 83LLA as it did after a countdown.
+            </p>
+        </div>
+
+        <div class = "narration">
+            <p>Nothing changed from last time.</p>
+        </div>
+
+        <div class = "speech">
+            <img src = "../../images/blue_sad.jpg">
+            <span class = "blue">Blue</span>
+            <p id = "password_dialogue">
+                I think I need to try another route
+            </p>
+        </div>
+        `
+
+        /* Checks if this page has already been encountered*/
+        var already_encountered = sessionStorage.getItem("encountered_screen");
+
+        if (already_encountered == undefined){
+            sessionStorage.setItem("encountered_screen", "false");
+        }
+        else if (already_encountered == "true"){
+            document.getElementById('storybox_content').innerHTML = subsequent_loop;
+        }
+
+        /* Updates the status of the player having the password */
+        var has_password = sessionStorage.getItem("password_status");
+        var encountered_paint = sessionStorage.getItem("encountered_paint");
+
+        if (has_password == undefined || encountered_paint == undefined){
+            sessionStorage.setItem("password_status", "has_half");
+        }
+        else if (encountered_paint == "true"){
+            sessionStorage.setItem("password_status", "has_both");
+        }
+
+        function setTrue(){
+            sessionStorage.setItem("encountered_screen", "true");
+        }
+
+        var voicemail_status = parseInt(sessionStorage.getItem("voicemail_progress"));
+
+        function progress_voicemail(){
+        if (voicemail_status < 6)
+        sessionStorage.setItem("voicemail_progress", voicemail_status + 1);
+        }
+    </script>
+    <script src = "../../scripts/voicemails.js"></script>
+</body>
+</html>

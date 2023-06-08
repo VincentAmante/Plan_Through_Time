@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time goes on</title>
+    <link href = "../../styles/main.css" rel = "stylesheet">
+    <link href = "../../images/temp_icon.png" rel = "icon">
+</head>
+<body>
+
+    <header>
+        <p>
+            Into the Alley
+        </p>
+    </header>
+
+    <div class = "storybox">
+        <div id = "storybox_content">
+            <div id = "route_encounter">
+                <div class = "narration">
+                    <p>
+                    I got out of my car,
+                    probably to the confusion and frustration of the drivers behind me.
+                    </p>
+                    </div>
+        
+                <div class = "narration">
+                    <p>The alley was blocked by a chain fence, but I quickly climbed over it.</p>
+            
+                    <p>I kept running.</p>
+                
+                    <p>I see in front of me, three separate paths: left, right and forward.</p>
+                
+                    <p>The left and right path lead to a dead end.</p>
+                </div>
+            </div>
+
+            <div id = "voicemail_0"></div>
+
+            <div id = "robot_knowledge">
+                <div class = "narration">
+                    <p>
+                        The way forward should lead straight to Red,
+                        yet there's a large mechanical figure that seems to occupy the path
+                    </p>
+                </div>
+            
+                <div class = "speech">
+                    <img src = "../../images/blue_neutral.png">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        Right now, I still think we should go forward, but what do you think?
+                    </p>
+                </div>
+            </div>
+
+            <div id = "password_status"></div>
+        </div>
+    </div>
+
+    <div id = "choices">
+        <button onclick="window.location.href = 'alley_left.html'; setTrue();">Left Alley</button>
+        <button onclick="window.location.href = 'straight_ahead.html'; setTrue();">Straight Ahead</button>
+        <button onclick="window.location.href = 'alley_right.html'; setTrue();">Right Alley</button>
+    </div>
+
+    <script src = "../../scripts/voicemails.js"></script>
+    <script>
+
+        var subsequent_loop = `
+        <div class = "narration">
+            <p>I once again exit my car to run through the alley.
+            Climbed over the fence again.<p>
+
+        <p>There's three paths: left, right, forward.</p>
+                </div>
+        `
+
+        /* Checks if this page has already been encountered*/
+        var already_encountered = sessionStorage.getItem("went_alley");
+
+        if (already_encountered == undefined){
+            sessionStorage.setItem("went_alley", "false");
+            }
+        else if (already_encountered == "true"){
+            document.getElementById('route_encounter').innerHTML = subsequent_loop;
+            }
+
+        function setTrue(){
+                sessionStorage.setItem("went_alley", "true");
+            }
+
+        var password_half = `
+        <div class = "speech">
+                    <img src = "../../images/blue_neutral.png">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        I got one half of the password, maybe the opposite way has the other.
+                    </p>
+                </div>
+        `
+
+        var password_full = `
+        <div class = "speech">
+        <img src = "../../images/blue_neutral.png">
+                    <span class = "blue">Blue</span>
+                    <p>
+                        I got both halves of the password, time to go forth.
+                    </p>
+                </div>
+        `
+
+        /* Checks if player has got one or both of the password halves */
+        var password_status = sessionStorage.getItem('password_status');
+
+        switch(password_status){
+            case "has_half":
+                document.getElementById('password_status').innerHTML = password_half;
+                break;
+            case "has_both":
+                document.getElementById('password_status').innerHTML = password_full;
+                break;
+            default:
+        }
+
+
+
+        var went_straight = `
+        <div class = "narration">
+                    <p>
+                        There's a large robot forward, but it's the only way to Red
+                    </p>
+                </div>
+                `
+
+        /* Checks if player has encountered the big robot ahead */
+        var knows_robot = sessionStorage.getItem("encountered_big_bot");
+
+        if (knows_robot == "true"){
+            document.getElementById('robot_knowledge').innerHTML = went_straight;
+        }
+    </script>
+</body>
+</html>

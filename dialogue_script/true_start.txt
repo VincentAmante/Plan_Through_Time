@@ -1,0 +1,42 @@
+Narration:
+
+first time {
+    I'm back in my car again, I have Red's voice mails. 
+    I'm back at the intersection.
+    I see the bright pink car, just in front of me, crossing over to kill its owner.
+
+    I open my phone to look at the map, and figure out the fastest way to get to Red.
+
+    There's two routes I can take:
+
+    1) The Alley Route: If I leave the car now, I'll be able to run over to Red through the alleys.
+        Sure, I'll leave my car unattended, but it's not as important as the idiot genius.
+
+        There's only one alley that takes me there, but it'll get me there faster than the road.
+
+    2) Chase the car now: I can go after the car, chase after it.
+        Then I'll ram it to prevent it from hitting Red
+
+        Sounds ideal
+
+    This is where you came in, dear voice in my head.
+    I need your guidance, what do I do?
+}
+
+Subsequent times {
+    Back in the car again. I see the pink car in front of me again.
+
+    Here are my options:
+
+        1) The Alley Route: If I leave the car now, I'll be able to run over to Red through the alleys.
+        Sure, I'll leave my car unattended, but it's not as important as the idiot genius.
+
+        There's only one alley that takes me there, but it'll get me there faster than the road.
+
+        2) Chase the car now: I can go after the car, chase after it.
+            Then I'll forcibly move it to prevent it from hitting Red
+
+        What do I do?
+}
+
+Choices: Car Route | Alley Route

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Genius Who Planned Through Time</title>
+    <link href = "../styles/instructions.css" rel = "stylesheet">
+    <link href = "../images/temp_icon.png" rel = "icon">
+</head>
+<body id = 'body'>
+
+    <header id = "header">
+        <h1>
+            The Genius Who Planned Through Time
+        </h1>
+    </header>
+
+    <!-- Contains all main contain, repeated for subsequent pages -->
+    <div class = "storybox">
+        <div id = "storybox_content">
+            <div class = "narration">
+                <p>Welcome to my HTML Interactive Story!</p>
+            </div>
+            <div class = "narration">
+                <p>This is a simple game where you guide the choices of Blue,
+                    a time traveller trying to save their colleague from work.
+                </p>
+            </div>
+
+            <h1>Instructions</h1>
+            <div class = "narration">
+                <p>
+                    Nothing too complex for the instructions!
+                </p>
+            </div>
+            <div class = "narration">
+                <p>
+                    Scroll on this story box to read through the story.
+                </p>
+
+                <p>
+                    Click on the buttons below to make a decision!
+                </p>
+            </div>
+            <div class = "narration">
+                <p>
+                    Sometimes, you'll find yourself going through the same areas in the story. 
+                    That's fine! Repetition is a core feature of the story and how you go about it is up to you
+                </p>
+            </div>
+
+            <div class = "narration">
+                <p>
+                    Oh! and when you press `Start`, don't close this tab to experience and control the music!
+                </p>
+            </div>
+
+            <div class = "narration">
+                <p>
+                    Finally! This story breaks in Internet Explorer 8, 
+                    so perhaps not use that and go for a up-to-date browser!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id = "choices">
+        <button onclick="changePage(); window.open('intro.html'); playAudio(); ">Start</button>
+    </div>
+
+
+    <script>
+        // Plays the audio, does a thank you page
+        // Opens new tab to allow audio to keep playing
+
+        function changePage(){
+            document.getElementById('body').innerHTML = `
+            <div id = 'thanks'>
+                </div>
+            `
+            document.getElementById('thanks').innerHTML = `
+            <h1> Thank you for Playing! </h1>
+            <audio  id = "bgm" loop controls>
+        <source src = "../audio/background_music.mp3" type = "audio/mp3">
+    Your browser does not support the HTML5 audio element.
+    </audio>
+            `
+        }
+
+        function playAudio(){
+            bgm.play();
+        }
+    </script>
+</body>
+</html>
